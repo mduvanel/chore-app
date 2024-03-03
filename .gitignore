@@ -1,4 +1,4 @@
 # Do not push any test db
-*.db
+db/*.db
 
 node_modules
