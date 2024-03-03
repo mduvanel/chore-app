@@ -9,6 +9,7 @@ describe('AppController', () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
       providers: [AppService],
+
     }).compile();
 
     appController = app.get<AppController>(AppController);
@@ -16,7 +17,8 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+      expect(appController.root()).toHaveProperty('message');
+      expect(appController.root().message).toBe('Hello world!');
     });
   });
 });
